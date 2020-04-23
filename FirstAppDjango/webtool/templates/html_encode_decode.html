@@ -1,0 +1,60 @@
+<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<head>
+<title>Encode\Decode HTML</title>
+     {% include "tracking_code.html" %}
+</head>
+<body>
+  <div class='container'>
+    {% include "base.html" %}
+    <div id='content' class='row-fluid'>
+        {% include "features.html" %}
+      <div class='span10 main'>
+        <h1 style="font-size:31.5px;">Encode\Decode HTML</h1>
+          <div class="col-md-6 col-md-offset-3">
+
+              <h3 style="font-size:14px">About html encode decode</h3>
+              <p class="space">
+                 With this tool, you can convert html-encode to html-decode and vice versa.
+              </p>
+              <p class="space">
+                 Remember, enter your data to HTML input and press the ENCODE button if you want to encode HTML or press the DECODE button if you want to decode HTML.
+              </p>
+              <p class="space" style="padding:0 0 10px 0">
+                 After that, data result will be display.
+              </p>
+              <form role="form" action="" method="post">
+                    {% csrf_token %}
+                    <fieldset>
+                        {% if post.input_value %}
+                            <div class="form-group">
+                                <label>HTML Input</label>
+                                <textarea class="form-control" name="inputValue" max-rows="5000" rows="10"  style="width:100%">{{post.input_value}}</textarea>
+                            </div>
+                            <input type="submit" value="ENCODE" name="encodeAction">
+                            <input type="submit" value="DECODE" name="decodeAction">
+                            <div style="padding:10px 0 0 0;">
+                                <label>HTML Output</label>
+                                <textarea class="form-control" max-rows="5000" rows="10"  style="width:100%">{{post.output_value}}</textarea>
+                            </div>
+                        {% else %}
+                            <div class="form-group">
+                                <label>HTML Input</label>
+                                <textarea class="form-control" max-rows="5000" name="inputValue"  rows="10" style="width:100%"></textarea>
+                            </div>
+                             <input type="submit" value="ENCODE" name="encodeAction">
+
+                            <input type="submit" value="DECODE" name="decodeAction">
+                        {% endif %}
+                    </fieldset>
+                </form>
+
+          </div>
+      </div>
+
+    </div>
+  </div>
+</body>

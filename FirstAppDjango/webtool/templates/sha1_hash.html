@@ -1,0 +1,56 @@
+<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<head>
+<title>SHA1 Hash</title>
+     {% include "tracking_code.html" %}
+</head>
+<body>
+  <div class='container'>
+    {% include "base.html" %}
+    <div id='content' class='row-fluid'>
+        {% include "features.html" %}
+      <div class='span10 main'>
+        <h1 style="font-size:31.5px;">SHA1 Hash</h1>
+          <div class="col-md-6 col-md-offset-3">
+
+                <form role="form" action="" method="post">
+                    {% csrf_token %}
+                    <fieldset>
+                        {% if post.input_value %}
+                            <div class="form-group">
+                                <label>Your String</label>
+                                <textarea class="form-control" name="inputValue"  maxlength="500" rows="5"  style="width:100%">{{post.input_value}}</textarea>
+                            </div>
+                            <input type="submit" value="Hash">
+                            <div style="padding: 10px 0 0 0">
+                                <label>SHA1 Hash</label>
+                                <textarea class="form-control" maxlength="500" rows="5"  style="width:100%">{{post.output_value}}</textarea>
+                            </div>
+                        {% else %}
+                            <div class="form-group">
+                                <label>Your String</label>
+                                <textarea class="form-control" name="inputValue"  id="inputValue" maxlength="500" rows="5" style="width:100%"></textarea>
+                            </div>
+                            <input type="submit" value="Hash">
+
+                        {% endif %}
+                    </fieldset>
+                </form>
+
+                <h2 class="section-title" style="font-size:20px">About SHA-1</h2>
+                <h3 style="font-size:14px">What is SHA-1?</h3>
+                <p class="space">SHA-1 stands for Secure Hash Algorithm 1. It is a cryptographic hash algorithm. SHA-1 is developed by National Security Agency and published by National Institute of Standards and Technology. SHA-1 is used in checksums for a file. </p>
+                <p class="space">Length of SHA-1 is 160 bits.</p>
+                <h3 style="font-size:14px">Why used SHA-1?</h3>
+                <p class="space">A file transfer on the Internet can be altered because of many reasons, such as: virus, hacker… So, you can use SHA-1 to check if the file is original or not.</p>
+
+
+          </div>
+      </div>
+
+    </div>
+  </div>
+</body>

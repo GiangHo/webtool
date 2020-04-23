@@ -1,0 +1,61 @@
+<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<head>
+<title>PHP Serialize/Unserialize</title>
+     {% include "tracking_code.html" %}
+</head>
+<body>
+  <div class='container'>
+    {% include "base.html" %}
+    <div id='content' class='row-fluid'>
+        {% include "features.html" %}
+      <div class='span10 main'>
+        <h1 style="font-size:31.5px;">PHP Serialize/Unserialize</h1>
+          <div class="col-md-6 col-md-offset-3">
+
+              <h3 style="font-size:14px">About php serialize/unserialize</h3>
+              <p class="space">
+                     With this tool, you can serialize or unserialize data.
+              </p>
+              <p class="space">
+                 Remember, enter your string to "Your String" before press the Serialize or Unserialize button.
+              </p>
+              <p class="space" style="padding:0 0 10px 0">
+                 After that, data result will be display.
+              </p>
+
+                <form role="form" action="" method="post">
+                    {% csrf_token %}
+                    <fieldset>
+                        {% if post.input_value %}
+                            <div class="form-group">
+                                <label>Your String</label>
+                                <textarea class="form-control" name="inputValue"  max-rows="5000" rows="10"  style="width:100%">{{post.input_value}}</textarea>
+                            </div>
+                            <input type="submit" name="serialize" value="Serialize">
+                            <input type="submit" name="unerialize" value="Unserialize">
+                            <div style="padding:10px 0 0 0">
+                                <label>Data Result</label>
+                                <textarea class="form-control" max-rows="5000" rows="10"  style="width:100%">{{post.output_value}}</textarea>
+                            </div>
+                        {% else %}
+                            <div class="form-group">
+                                <label>Your String</label>
+                                <textarea class="form-control" name="inputValue"  id="inputValue" max-rows="5000" rows="10" style="width:100%"></textarea>
+                            </div>
+                            <input type="submit" name="serialize" value="Serialize">
+                            <input type="submit" name="unserialize" value="Unserialize">
+
+                        {% endif %}
+                    </fieldset>
+                </form>
+
+          </div>
+      </div>
+
+    </div>
+  </div>
+</body>

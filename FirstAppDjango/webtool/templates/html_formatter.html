@@ -1,0 +1,70 @@
+<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<head>
+<title>HTML Formatter</title>
+     {% include "tracking_code.html" %}
+</head>
+<body>
+  <div class='container'>
+    {% include "base.html" %}
+    <div id='content' class='row-fluid'>
+        {% include "features.html" %}
+      <div class='span10 main'>
+        <h1 style="font-size:31.5px;">HTML Formatter</h1>
+          <div class="col-md-6 col-md-offset-3">
+
+                <form role="form" action="" method="post">
+                    {% csrf_token %}
+                    <fieldset>
+                        {% if post.input_value %}
+                            <div class="form-group">
+                                <label>Input</label>
+                                <textarea class="form-control" name="inputValue" max-rows="5000" rows="10"  style="width:100%">{{post.input_value}}</textarea>
+                            </div>
+                            <input type="submit" value="Format">
+                            <div style="padding:10px 0 0 0;">
+                                <label>Output</label>
+                                <textarea class="form-control" max-rows="5000" rows="10"  style="width:100%">{{post.output_value}}</textarea>
+                            </div>
+                        {% else %}
+                            <div class="form-group">
+                                <label>Input</label>
+                                <textarea class="form-control" name="inputValue" max-rows="5000" rows="10" style="width:100%"></textarea>
+                            </div>
+                             <input type="submit" value="Format">
+                        {% endif %}
+                    </fieldset>
+                </form>
+
+                <h2 class="section-title" style="font-size:20px">About HTML</h2>
+                <h3 style="font-size:14px">What is HTML?</h3>
+                <p class="space">
+                    HTML stands for Hyper Text Markup Language. It’s used for creating web pages and web applications. HTML includes elements. HTML elements are tags with separated meaning.
+                </p>
+                <p class="space">
+                  <em>Example: </em>
+                  <div>
+                        <code>
+                            <span>&lt;!DOCTYPE html&gt;</span><br>
+                            <span>&lt;html&gt;</span><br>
+                            <span>&lt;head&gt;</span><br>
+                            <span>&lt;title&gt;Page Title&lt;/title&gt;</span><br>
+                            <span>&lt;/head&gt;</span><br>
+                            <span>&lt;body&gt;</span><br>
+                            <span>&lt;h1&gt;My First Heading&lt;/h1&gt;</span><br>
+                            <span>&lt;p&gt;My first paragraph.&lt;/p&gt;</span><br>
+                            <span>&lt;/body&gt;</span><br>
+                            <span>&lt;/html&gt;</span><br>
+                      </code>
+                  </div>
+
+              </p>
+          </div>
+      </div>
+
+    </div>
+  </div>
+</body>

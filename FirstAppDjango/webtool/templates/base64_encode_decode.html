@@ -1,0 +1,55 @@
+<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<head>
+     {% include "tracking_code.html" %}
+<title>Base64 Encode\Decode</title>
+</head>
+<body>
+  <div class='container'>
+    {% include "base.html" %}
+    <div id='content' class='row-fluid'>
+        {% include "features.html" %}
+      <div class='span10 main'>
+        <h1 style="font-size:31.5px;">Base64 Encode\Decode</h1>
+          <div class="col-md-6 col-md-offset-3">
+
+              <form role="form" action="" method="post">
+                    {% csrf_token %}
+                    <fieldset>
+                        {% if post.input_value %}
+                            <div class="form-group">
+                                <label>Input String</label>
+                                <textarea class="form-control" name="inputValue"  rows="5"  style="width:100%">{{post.input_value}}</textarea>
+                            </div>
+                            <input type="submit" value="ENCODE" name="encodeAction">
+                            <input type="submit" value="DECODE" name="decodeAction">
+                            <div style="padding:10px 0 0 0;">
+                                <label>Output String</label>
+                                <textarea class="form-control" maxlength="500" rows="5"  style="width:100%">{{post.output_value}}</textarea>
+                            </div>
+                        {% else %}
+                            <div class="form-group">
+                                <label>Input String</label>
+                                <textarea class="form-control" name="inputValue"  rows="5" style="width:100%"></textarea>
+                            </div>
+                             <input type="submit" value="ENCODE" name="encodeAction">
+
+                            <input type="submit" value="DECODE" name="decodeAction">
+                            <br>
+                        {% endif %}
+                    </fieldset>
+                </form>
+
+              <h2 class="section-title" style="font-size:20px">About Base 64</h2>
+              <h3 style="font-size:14px">What is Base64?</h3>
+              <p class="space">Base 64 is used to encode and decode data.  It can convert binary to ascii and vice versa. Base64 includes characters: from A to Z, a - z, 0 - 9, + and /. Total is 64 characters. Character from A to Z represent values from 0 to 25, a-z represent value from 26 to 51, 0-9 represent values from 52 to 61, + represent value 62, - represent value 63. In base64, a character use 6 bits</p>
+
+          </div>
+      </div>
+
+    </div>
+  </div>
+</body>

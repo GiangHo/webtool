@@ -1,0 +1,50 @@
+<div class='span2 sidebar'>
+        <h4>Converter</h4>
+        <ul class="nav nav-tabs nav-stacked">
+            <li><a href='{% url "webtool:binary_to_decimal" %}'>Binary To Decimal</a></li>
+            <li><a href='{% url "webtool:binary_to_hex" %}'>Binary To Hex</a></li>
+            <li><a href='{% url "webtool:binary_to_oct" %}'>Binary To Oct</a></li>
+            <li><a href='{% url "webtool:xml_to_json" %}'>XML To JSON </a></li>
+            <li><a href='{% url "webtool:json_to_xml" %}'>JSON To XML</a></li>
+            <li><a href='{% url "webtool:json_to_html" %}'>JSON To HTML</a></li>
+            <li><a href='{% url "webtool:xml_to_html" %}'>XML To HTML</a></li>
+            <li><a href='{% url "webtool:string_to_ascii" %}'>String To ASCII</a></li>
+            <li><a href='{% url "webtool:ascii_to_string" %}'>ASCII To String</a></li>
+        </ul>
+
+        <h4>Encode\Decode</h4>
+        <ul class="nav nav-tabs nav-stacked">
+            <li><a href='{% url "webtool:url_encode_decode" %}'>URL</a></li>
+            <li><a href='{% url "webtool:base64_encode_decode" %}'>Base64</a></li>
+            <li><a href='{% url "webtool:html_encode_decode" %}'>HTML</a></li>
+        </ul>
+
+        <h4>Formatter</h4>
+        <ul class="nav nav-tabs nav-stacked">
+            <li><a href='{% url "webtool:json_formatter" %}'>JSON</a></li>
+            <li><a href='{% url "webtool:xml_formatter" %}'>XML</a></li>
+            <li><a href='{% url "webtool:sql_formatter" %}'>SQL</a></li>
+            <li><a href='{% url "webtool:html_formatter" %}'>HTML</a></li>
+        </ul>
+
+        <h4>Generator</h4>
+        <ul class="nav nav-tabs nav-stacked">
+
+            <li><a href='{% url "webtool:md5_hash" %}'>MD5 Hash</a></li>
+            <li><a href='{% url "webtool:sha1_hash" %}'>SHA1 Hash</a></li>
+        </ul>
+
+        <h4>Strings Tools</h4>
+        <ul class="nav nav-tabs nav-stacked">
+            <li><a href='{% url "webtool:string_counter" %}'>String Counter</a></li>
+            <li><a href='{% url "webtool:string_reversal" %}'>String Reversal</a></li>
+            <li><a href='{% url "webtool:remove_extra_space" %}'>Remove Extra Spaces</a></li>
+            <li><a href='{% url "webtool:remove_line_breaks" %}'>Remove Line Breaks</a></li>
+            <li><a href='{% url "webtool:remove_special_character" %}'>Remove Special Character</a></li>
+        </ul>
+
+        <h4>Other Tools</h4>
+        <ul class="nav nav-tabs nav-stacked">
+          <li><a href='{% url "webtool:serialize_unserialize_php" %}'>PHP Serialize/Unserialize</a></li>
+        </ul>
+</div>

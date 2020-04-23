@@ -1,0 +1,81 @@
+<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<head>
+<title>All tools free online for developer</title>
+  {% include "tracking_code.html" %}
+</head>
+<body>
+  <div class='container'>
+    {% include "base.html" %}
+    <div id='content' class='row-fluid'>
+      {% include "features.html" %}
+      <div class='span8 main'>
+        <h1 style="font-size:31.5px;">About all tools online for developers</h1>
+        <p>This site is created to help person can code easier.</p>
+        <p>I often feel uncomfortable when debug, test, check with nonstandard data. So I develop this tool to work easier for me and for someone. This tool is build and develop gradually.
+          At present, it has some tools about
+          <strong>converter, encode/decode, formatter, generator, string tools …</strong>
+        </p>
+
+        <div>
+          <h3 style="font-size:18px;">About formatter</h3>
+          <p>These tools are developed to help you have a data beautiful visualization. Your data is in html, json, xml, sql format. </p>
+          <em>Example:</em><br>
+          <p>You have json: <p><em>{"name":{"firstname":"Emma","lastname":"Watson"}}</em></p></p>
+          <p>Json after the tool handles: </p>
+          <div>
+                <code>
+                  <span>{</span><br>
+                  <span class="json-indent">&nbsp;&nbsp;&nbsp;</span><span>"name":{</span><br>
+                  <span class="json-indent">&nbsp;&nbsp;&nbsp;</span><span class="json-indent">&nbsp;&nbsp;&nbsp;</span><span>"firstname":"Emma",</span><br>
+                  <span class="json-indent">&nbsp;&nbsp;&nbsp;</span><span class="json-indent">&nbsp;&nbsp;&nbsp;</span><span>"lastname":"Watson"</span><br>
+                  <span class="json-indent">&nbsp;&nbsp;&nbsp;</span><span>}</span><br>
+                  <span>}</span><br>
+              </code>
+          </div>
+        </div>
+
+        <div>
+          <h3 style="font-size:18px;">About Converter</h3>
+          <p>Sometimes, you know how to create, change, convert somethings. But it’s not necessary, you just want to result for help your work. For example, you want to convert binary to decimal. You don’t care how or why it can convert. You just care result. You can use this tool to convert. </p>
+          <em>Example:</em><br>
+          <p>You have binary value: <em>1010</em></p>
+          <p>You will have decimal value: <em>10</em></p>
+        </div>
+
+        <div>
+          <h3 style="font-size:18px;">About Encode/Decode</h3>
+          <p>Sometimes during work, you need encode or decode. You can encode/decode url, base64, … with this tool.</p>
+          <em>Example:</em><br>
+          <p>Your string need to encode base64: <em>th1s 1s p3ssw0rd</em></p>
+          <p>After encode, <em>dGgxcyAxcyBwM3NzdzByZA==</em></p>
+        </div>
+
+        <div>
+          <h3 style="font-size:18px;">About Generator</h3>
+          <p>Security is important. If you need using key string when send data, you can use MD5 hash or SHA hash.</p>
+          <em>Example:</em><br>
+          <p>Your string: <em>18122018hashthiskey</em></p>
+          <p>MD5 hash: <em>3e785a69630ac0a9d9906e4b257ed8d3</em></p>
+        </div>
+
+        <div>
+          <h3 style="font-size:18px;">About string tools</h3>
+          <p>If you want count, reverse string or remove extra spaces, remove line breaks, remove special character, you can do it with this site.</p>
+          <em>Example:</em><br>
+          <p>Your string: <em>Monday is today</em></p>
+          <p>After reverse: <em>Today is Monday.</em></p>
+        </div>
+
+      </div>
+
+
+
+      {% include "features_right.html" %}
+
+    </div>
+  </div>
+</body>
